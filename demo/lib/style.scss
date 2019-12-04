@@ -1,0 +1,152 @@
+
+.button-list {
+    display: flex;
+
+    // 例１
+    button {
+        margin: 5px;
+        padding: 8px 10px;
+        border: 0px none;
+        border-radius: 5px;
+        font-size: 14px;
+        color: white;
+
+        &.normal {
+           background-color: #007bff;
+
+            &:hover {
+                background-color: #0069d9;
+            }
+        }
+
+        &.submit {
+            background-color: #dc3545;
+
+            &:hover {
+                background-color: #c82333;
+            }
+        }
+
+        &.cancel {
+            background-color: #6c757d;
+
+            &:hover {
+                background-color: #5a6268;
+            }
+        }
+    }
+}
+
+
+// 例２
+.media-query {
+    margin-top: 50px;
+    display: flex;
+
+    .balloon {
+        width: 400px;
+        height: 200px;
+        border-radius: 5px;
+        background-color: #dddddd;
+        text-align: center;
+        line-height: 200px;
+
+        @media screen and (max-width: 480px) {
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+        }
+    }
+}
+
+
+$parent_height: 100px;
+$child_height: 80px;
+
+.parent {
+    margin-top: 50px;
+    height: $parent_height;
+
+    .child {
+        height: $child_height;
+        background-color: #007bff;
+    }
+
+    .footer {
+        height: $parent_height - $child_height;
+        background-color: #dc3545;
+    }
+}
+
+
+@mixin buttonColor($color, $hoverColor) {
+    background-color: $color;
+
+    &:hover {
+        background-color: $hoverColor;
+    }
+}
+
+button {
+    &.normal2 {
+        @include buttonColor(#007bff,#0069d9);
+    }
+
+    &.submit2 {
+        @include buttonColor(#dc3545,#c82333);
+    }
+
+    &.cancel2 {
+        @include buttonColor(#6c757d,#5a6268);
+    }
+}
+
+$tabBreakPoint: 940px;
+$pcBreakPoint: 670px;
+
+@mixin mqSp {
+    @media screen and (max-width: $pcBreakPoint) {
+        @content;
+    }
+}
+
+@mixin mqTab {
+    @media screen and (max-width: $tabBreakPoint) {
+        @content;
+    }
+}
+
+.media-query {
+    width: 800px;
+    
+    @include mqTab {
+        width: 500px;
+    }
+
+    @include mqSp {
+        width: 300px;
+    }
+}
+
+.media-query2 {
+    margin-top: 50px;
+    display: flex;
+
+    .balloon {
+        width: 800px;
+        height: 200px;
+        border-radius: 5px;
+        background-color: #dddddd;
+        text-align: center;
+        line-height: 200px;
+
+    
+        @include mqTab {
+            width: 600px;
+        }
+
+        @include mqSp {
+            width: 400px;
+        }
+    }
+}

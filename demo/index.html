@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sass DEMO</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js"></script>
+    <script src="https://unpkg.com/@neos21/in-browser-sass@1.0.2/in-browser-sass.min.js"></script>
+    <link rel="stylesheet" type="text/scss" href="lib/style.scss">
+</head>
+<body>
+    <div class="button-list">
+        <button class="normal">通常ボタン</button>
+        <button class="submit">送信ボタン</button>
+        <button class="cancel">キャンセルボタン</button>
+    </div>
+
+    <div class="media-query">
+        <div class="balloon">
+            メディアクエリ
+        </div>
+    </div>
+
+    <div class="parent">
+        <div class="child">
+            child
+        </div>
+        <div class="footer">
+            footer
+        </div>
+    </div>
+
+    <div class="button-list">
+        <button class="normal2">通常ボタン</button>
+        <button class="submit2">送信ボタン</button>
+        <button class="cancel2">キャンセルボタン</button>
+    </div>
+
+    <div class="media-query2">
+        <div class="balloon">
+            メディアクエリ（mixinを使用した場合）
+        </div>
+    </div>
+</body>
+</html>
