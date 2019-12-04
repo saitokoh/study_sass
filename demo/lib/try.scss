@@ -74,7 +74,7 @@ h2 {
         padding: 57px 50px 15px;
         display: flex;
         align-items: center;
-        marign: 0 auto;
+        margin: 0 auto;
         
         @include mqSp {
             flex-direction: column;
@@ -96,28 +96,31 @@ h2 {
             }
         }
 
-        .base-info {
-            border-bottom: 1px solid #dedede;
-            padding-bottom: 25px;
-            margin-bottom: 25px;
-            @include mqSp {
-                text-align: center;
-            }
+        .description {
+            min-width: 420px;
 
-
-            .balloon {
+            .base-info {
+                border-bottom: 1px solid #dedede;
+                padding-bottom: 25px;
                 margin-bottom: 25px;
-
                 @include mqSp {
-                    margin-top: 25px;
+                    text-align: center;
+                }
+
+
+                .balloon {
+                    margin-bottom: 25px;
+
+                    @include mqSp {
+                        margin-top: 25px;
+                    }
+                }
+
+                h1 {
+                    margin-bottom: 10px;
                 }
             }
-
-            h1 {
-                margin-bottom: 10px;
-            }
         }
-
         
         .details-info li {
             margin-bottom: 15px;
@@ -166,22 +169,20 @@ h2 {
             align-items: center;
             height: 100%;
 
-            li {
-                a {
-                    display: inline-block;
-                    margin: 0 20px;
-                    padding: 10px;
-                    width: 20px;
-                    height: 20px;
-                    border-radius: 20px;
-                    text-align: center;
-                    line-height: 20px;
-                    color: #fff;
-                    transition: background-color 0.5s;
+            li a {
+                display: inline-block;
+                margin: 0 20px;
+                padding: 10px;
+                width: 20px;
+                height: 20px;
+                border-radius: 20px;
+                text-align: center;
+                line-height: 20px;
+                color: #fff;
+                transition: background-color 0.5s;
 
-                    &:hover {
-                        background-color: darken(#e8676b, 10%);
-                    }
+                &:hover {
+                    background-color: darken(#e8676b, 10%);
                 }
             }
         }
